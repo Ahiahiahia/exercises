@@ -5,22 +5,19 @@
  */
 public class LeetCode387 {
     public static void main(String[] args){
-        String str = "loveleetcode";
+        String str = "zz";
         System.out.println(firstUniqChar(str));
     }
     public static int firstUniqChar(String s) {
-        if(s ==null){
-            return -1;
+        int[] nums = new int[256];
+        char[] chs = s.toCharArray();
+        for(int i=0; i<chs.length; i++){
+            char ch = chs[i];
+            nums[ch] = nums[ch] + 1;
         }
-        char[] data = s.toCharArray();
-        for(int i=0; i<s.length(); i++) {
-            int j = i+1;
-            for( ; j<s.length(); j++){
-                if(data[i] == data[j]){
-                    break;
-                }
-            }
-            if(j>=s.length()){
+        for(int i=0; i<chs.length; i++){
+            char ch = chs[i];
+            if(nums[ch] == 1){
                 return i;
             }
         }
