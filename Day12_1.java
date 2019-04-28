@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * 汽水瓶
  * 规定：3个空汽水瓶换1个汽水
